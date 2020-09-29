@@ -7,6 +7,7 @@ public class HalloJavamitForEach {
     public static void main(String[] args) {
         new HalloJavamitForEach().printList();
     }
+    //Beispiel 2
     private void printList(){
         list.add("Hellou");
         list.add("WASSUP");
@@ -14,6 +15,7 @@ public class HalloJavamitForEach {
             System.out.println(s);
         }
         list.forEach((String s) -> System.out.println(s));
+        list.forEach(System.out::println);
     }
 
 }
