@@ -39,6 +39,22 @@ public class NumberTester { //Beispiel 3
         this.palindromeTester = palindromeTester;
     }
     public void testFile(){
+        int input0=0;
+        Scanner scanner = new Scanner(System.in,"Windows-1252");
+        if (anzTest != testCounter){
+            System.out.println("\\u001b[33m[WARNING]\\u001b[37m Da die Anzahl der Einträge nicht mit der Rechennummer einstimmt, soll die Eintragsnummer (Zeile 1) berechnet werden oder alle Einträge?\n" +
+                    "1..Eintragsnummer\n" +
+                    "2..alle Einträge");
+            try {
+                input0 = Integer.parseInt(scanner.nextLine());
+            }
+            catch(Exception e) {
+                input0 = 1;
+            }
+        }
+
+    }
+    private void logic(int length){
 
     }
 }
