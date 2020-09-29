@@ -14,7 +14,18 @@ public class NumberTester { //Beispiel 3
 
     public NumberTester(String fileName) {
         this.fileName = fileName;
-
+        try {
+            Scanner scan = new Scanner(new File(fileName));
+            anzTest = Integer.parseInt(scan.nextLine());
+            testCounter=0;
+            while(scan.hasNext()){
+                allTests[testCounter] = scan.nextLine();
+                testCounter++;
+            }
+            System.out.println("Anzahl der wirklichen Tests: "+testCounter);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
     public void setOddEvenTester(NumberTest oddTester){ //checkt ob gerade Zahlen
         this.oddTester = oddTester;
