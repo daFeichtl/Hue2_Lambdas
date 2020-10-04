@@ -18,4 +18,13 @@ public class Number {
         this.b = b;
     }
 
+    public interface CalculationOperation {
+        Number calc(Number x, Number y);
+    }
+    public abstract class AbstractCalculator {
+        protected CalculationOperation add;
+        protected CalculationOperation subtract;
+        protected CalculationOperation multiply;
+        protected CalculationOperation divide;
+    }
 }
