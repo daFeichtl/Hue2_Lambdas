@@ -70,6 +70,59 @@ public class NumberTester { //Beispiel 3
         }
     }
     private void logic(int length){
-
+        for (int i = 0; i < length; i++) {
+            String[] val = allTests[i].split(seperator);
+            int num = 0;
+            try {
+                num = Integer.parseInt(val[1]);
+            } catch(ClassCastException c) {
+                System.out.println("numbers.txt contains illegal characters!");
+            }
+            finally {
+                if (num==0){
+                    num = 0;
+                }
+            }
+            switch (val[0]){
+                case "1":
+                    setOddEvenTester((number) -> number%2==0);
+                    System.out.println(numberTest.testNumber(num) ? "EVEN" : "ODD");
+                    break;
+                case "2":
+                    setPrimeTester((number) ->{
+                        for (int j = 2; j < number; j++) {
+                            if (number % j == 0){
+                                return false;
+                            }
+                        }
+                        return true;
+                    });
+                    System.out.println(numberTest.testNumber(num) ? "PRIME" : "NO PRIME");
+                    break;
+                case "3":
+                    setPalindromeTester((number) -> {
+                        char[] sNum = (number + "").toCharArray();
+                        if (sNum.length%2!=0){
+                            for (int j = 0; j < (sNum.length - 1) / 2 - 1; j++) {
+                                if (sNum[j] != sNum[sNum.length-j-1]){
+                                    return false;
+                                }
+                            }
+                        }
+                        else{
+                            for (int j = 0; j < sNum.length / 2 - 1; j++) {
+                                if (sNum[j] != sNum[sNum.length-j-1]){
+                                    return false;
+                                }
+                            }
+                        }
+                        return true;
+                    });
+                    System.out.println(numberTest.testNumber(num) ? "PALIDROME" : "NO PALIDROME");
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + val[0]);
+            }
+        }
     }
 }
