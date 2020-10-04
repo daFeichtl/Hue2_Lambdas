@@ -16,34 +16,34 @@ public class RationalCalculator extends AbstractCalculator {
 
     @Override
     public Number subtract(Number a, Number b) {
-        Number.CalculationOperation add = (Number x, Number y) -> {
+        Number.CalculationOperation sub = (Number x, Number y) -> {
             Number su = new Number();
             su.setA(x.getA()-y.getA());
             su.setB(x.getB()-y.getB());
             return su;
         };
-        return add.calc(a,b);
+        return sub.calc(a,b);
     }
 
     @Override
     public Number multiply(Number a, Number b) {
-        Number.CalculationOperation add = (Number x, Number y) -> {
+        Number.CalculationOperation mul = (Number x, Number y) -> {
             Number mu = new Number();
             mu.setB(x.getB()*y.getB());
             mu.setA(x.getA()*y.getA());
             return mu;
         };
-        return add.calc(a,b);
+        return mul.calc(a,b);
     }
 
     @Override
     public Number divide(Number a, Number b) {
-        Number.CalculationOperation add = (Number x, Number y) -> {
+        Number.CalculationOperation div = (Number x, Number y) -> {
             Number di = new Number();
             di.setA(x.getA()/y.getA());
             di.setB(x.getB()/y.getB());
             return di;
         };
-        return add.calc(a,b);
+        return div.calc(a,b);
     }
 }
