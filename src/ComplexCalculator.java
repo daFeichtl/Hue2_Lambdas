@@ -13,13 +13,13 @@ public class ComplexCalculator extends AbstractCalculator{
             return su;
         }, (Number x, Number y) -> {
             Number mu = new Number();
-            mu.setA(x.getA() * y.getA());
-            mu.setB(x.getB() * y.getB());
+            mu.setA(x.getA() * y.getA()-x.getB() * y.getB());
+            mu.setB(x.getA() * y.getB()+x.getB() * y.getA());
             return mu;
         }, (Number x, Number y) -> {
             Number di = new Number();
-            di.setA(x.getA() / y.getA());
-            di.setB(x.getB() / y.getB());
+            di.setA(x.getA()*y.getA() + x.getB()*y.getB() / y.getA()*y.getA() + y.getB()*y.getB());
+            di.setB(x.getB()*y.getA() - x.getA()*y.getB() / y.getA()*y.getA() + y.getB()*y.getB());
             return di;
         });
     }

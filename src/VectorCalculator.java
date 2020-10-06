@@ -12,13 +12,13 @@ public class VectorCalculator extends AbstractCalculator {
             return su;
         },  (x,y) -> {
             Number mu = new Number();
-            mu.setA(x.getA()*y.getB());
-            mu.setB(x.getB()*y.getA());
+            mu.setA((x.getA()*y.getA())+(x.getB()*y.getB()));
+            mu.setB(0.0);
             return mu;
         }, (x,y) -> {
             Number di = new Number();
-            di.setA((x.getA()*y.getA())+(x.getB()*y.getB()));
-            di.setB(0.0);
+            di.setA(x.getA()*y.getB());
+            di.setB(y.getA()*x.getB());
             return di;
         });
     }

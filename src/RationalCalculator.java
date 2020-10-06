@@ -2,13 +2,13 @@ public class RationalCalculator extends AbstractCalculator {
     public RationalCalculator() {
         super((Number x, Number y) -> {
             Number ad = new Number();
-            ad.setA(x.getA()+y.getA());
-            ad.setB(x.getB()+y.getB());
+            ad.setA(x.getA()*y.getB()+y.getA()*x.getB());
+            ad.setB(x.getB()*y.getB());
             return ad;
         }, (Number x, Number y) -> {
             Number su = new Number();
-            su.setA(x.getA()-y.getA());
-            su.setB(x.getB()-y.getB());
+            su.setA(x.getA()*y.getB()-y.getA()*x.getB());
+            su.setB(x.getB()*y.getB());
             return su;
         }, (Number x, Number y) -> {
             Number mu = new Number();

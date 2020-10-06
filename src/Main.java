@@ -12,7 +12,7 @@ public class Main {
         int chosen = 0;
         AbstractCalculator calc = null;
         while(chosen !=4){
-            System.out.println("Choose Calc:\n1..Relational calc\n2..Vector calc\n3.. Complex calc\n4.. Exit");
+            System.out.println("Choose Calc:\n1.. Relational calc\n2.. Vector calc\n3.. Complex calc\n4.. Exit");
             try {
                 chosen = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException n){
