@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         new HalloJavamitForEach().printList();
         NumberTester tester = new NumberTester("numbers.txt");
+        tester.testFile();
         new Main().runNr4();
     }
     private void runNr4(){
@@ -12,7 +13,11 @@ public class Main {
         AbstractCalculator calc = null;
         while(chosen !=4){
             System.out.println("Choose Calc:\n1..Relational calc\n2..Vector calc\n3.. Complex calc\n4.. Exit");
-            chosen = Integer.parseInt(scanner.nextLine());
+            try {
+                chosen = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException n){
+                chosen = 0;
+            }
             switch (chosen){
                 case 1:
                     calc = new RationalCalculator();
@@ -30,7 +35,7 @@ public class Main {
                     System.out.println("Illegal input!");
                     break;
             }
-            if (chosen ==4)
+            if (chosen <1 || chosen >3)
                 break;
             int chosenOperation = 0;
             while(chosenOperation != 5 || chosen != 4){

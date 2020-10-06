@@ -26,7 +26,6 @@ public class NumberTester { //Beispiel 3
                 allTests[testCounter] = scan.nextLine();
                 testCounter++;
             }
-            testFile();
             System.out.println("Anzahl der wirklichen Tests: "+testCounter);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
